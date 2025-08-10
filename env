@@ -1,0 +1,205 @@
+# ============================================
+# Global AI Providers 🌍
+# ============================================
+
+# OpenAI
+OPENAI_API_KEY=
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_ENDPOINT=
+AZURE_OPENAI_DEPLOYMENT_NAME=
+
+# Anthropic
+ANTHROPIC_API_KEY=
+AWS_CLAUDE_ACCESS_KEY=
+AWS_CLAUDE_SECRET_KEY=
+AWS_CLAUDE_REGION=
+
+# Google
+GEMINI_API_KEY=
+GOOGLE_APPLICATION_CREDENTIALS=
+
+# Mistral AI
+MISTRALAI_API_KEY=
+
+# Meta/Other Major Providers
+GROQ_API_KEY=
+DEEPSEEK_API_KEY=
+COHERE_API_KEY=
+PERPLEXITY_API_KEY=
+REPLICATE_API_KEY=
+
+# ============================================
+# Chinese AI Providers 🇨🇳
+# ============================================
+
+# 百度文心一言 (Baidu ERNIE)
+BAIDU_API_KEY=
+BAIDU_SECRET_KEY=
+BAIDU_ACCESS_TOKEN=
+
+# 阿里通义千问 (Alibaba Qwen)
+ALIBABA_API_KEY=
+QWEN_API_KEY=
+DASHSCOPE_API_KEY=
+
+# 字节跳动豆包 (ByteDance Doubao)
+BYTEDANCE_API_KEY=
+DOUBAO_API_KEY=
+VOLCENGINE_API_KEY=
+VOLCENGINE_ACCESS_KEY=
+VOLCENGINE_SECRET_KEY=
+
+# 讯飞星火 (iFLYTEK Spark)
+IFLYTEK_API_KEY=
+SPARK_API_KEY=
+IFLYTEK_APP_ID=
+IFLYTEK_API_SECRET=
+
+# 智谱AI (Zhipu AI) - ChatGLM
+ZHIPUAI_API_KEY=
+CHATGLM_API_KEY=
+
+# 360智脑 (360 AI Brain)
+AI360_API_KEY=
+AI360_SECRET_KEY=
+
+# 腾讯混元 (Tencent Hunyuan)
+TENCENT_API_KEY=
+TENCENT_SECRET_ID=
+TENCENT_SECRET_KEY=
+HUNYUAN_API_KEY=
+
+# 月之暗面 (Moonshot AI)
+MOONSHOT_API_KEY=
+KIMI_API_KEY=
+
+# 百川大模型 (Baichuan AI)
+BAICHUAN_API_KEY=
+
+# MINIMAX
+MINIMAX_API_KEY=
+MINIMAX_GROUP_ID=
+
+# 零一万物 (01.AI / Yi)
+YI_API_KEY=
+LINGYIWANWU_API_KEY=
+
+# 阶跃星辰 (StepFun)
+STEPFUN_API_KEY=
+
+# 硅基流动 (SiliconFlow)
+SILICONFLOW_API_KEY=
+SILICONCLOUD_API_KEY=
+
+# Coze
+COZE_API_KEY=
+COZE_BOT_ID=
+
+# ============================================
+# Other Global Providers 🌐
+# ============================================
+
+# AI21 Studio
+AI21_API_KEY=
+
+# AiLAYER
+AILAYER_API_KEY=
+
+# AIMLAPI
+AIMLAPI_API_KEY=
+
+# Anyscale
+ANYSCALE_API_KEY=
+
+# Cloudflare Workers AI
+CLOUDFLARE_ACCOUNT_ID=
+CLOUDFLARE_API_KEY=
+
+# Corcel
+CORCEL_API_KEY=
+
+# DeepInfra
+DEEPINFRA_API_KEY=
+
+# DeepL
+DEEPL_API_KEY=
+
+# Fireworks AI
+FIREWORKSAI_API_KEY=
+
+# Forefront AI
+FOREFRONT_API_KEY=
+
+# FriendliAI
+FRIENDLIAI_API_KEY=
+
+# GooseAI
+GOOSEAI_API_KEY=
+
+# Hugging Face
+HUGGINGFACE_API_KEY=
+
+# HyperBee AI
+HYPERBEEAI_API_KEY=
+
+# Lamini
+LAMINI_API_KEY=
+
+# LLaMA.CPP (Local)
+LLAMACPP_URL=
+
+# Monster API
+MONSTERAPI_API_KEY=
+
+# Neets.ai
+NEETSAI_API_KEY=
+
+# Novita AI
+NOVITAAI_API_KEY=
+
+# NVIDIA AI
+NVIDIA_API_KEY=
+
+# OctoAI
+OCTOAI_API_KEY=
+
+# Ollama (Local)
+OLLAMA_URL=
+
+# Reka AI
+REKAAI_API_KEY=
+
+# Shuttle AI
+SHUTTLEAI_API_KEY=
+
+# TheB.ai
+THEBAI_API_KEY=
+
+# Together AI
+TOGETHERAI_API_KEY=
+
+# Voyage AI
+VOYAGE_API_KEY=
+
+# Watsonx AI
+WATSONXAI_API_KEY=
+WATSONXAI_SPACE_ID=
+WATSONXAI_PROJECT_ID=
+
+# Writer
+WRITER_API_KEY=
+
+# xAI (Grok)
+XAI_API_KEY=
+GROK_API_KEY=
+
+# ============================================
+# Future Providers (Planned) 🚀
+# ============================================
+
+# Azure AI
+AZURE_AI_API_KEY=
+AZURE_AI_ENDPOINT=
+
+# Additional Chinese Providers
+# (Add more as they become available)
