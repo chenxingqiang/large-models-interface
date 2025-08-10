@@ -49,6 +49,18 @@ require('dotenv').config();
  * @property {string} novitaaiApiKey - The API key for NovitaAI.
  * @property {string} zhipuaiApiKey - The API key for ZhipuAI.
  * @property {string} voyageApiKey - The API key for Voyage.
+ * @property {string} alibabaApiKey - The API key for Alibaba Cloud AI.
+ * @property {string} baichuanApiKey - The API key for Baichuan AI.
+ * @property {string} baiduApiKey - The API key for Baidu ERNIE.
+ * @property {string} bytedanceApiKey - The API key for ByteDance Doubao.
+ * @property {string} cozeApiKey - The API key for Coze.
+ * @property {string} iflytekApiKey - The API key for iFLYTEK Spark.
+ * @property {string} minimaxApiKey - The API key for MINIMAX.
+ * @property {string} moonshotApiKey - The API key for Moonshot AI.
+ * @property {string} stepfunApiKey - The API key for StepFun.
+ * @property {string} tencentApiKey - The API key for Tencent Hunyuan.
+ * @property {string} xaiApiKey - The API key for xAI Grok.
+ * @property {string} yiApiKey - The API key for 01.AI Yi.
  */
 module.exports = {
   ai21ApiKey: process.env.AI21_API_KEY,
@@ -92,4 +104,18 @@ module.exports = {
   novitaaiApiKey: process.env.NOVITAAI_API_KEY,
   zhipuaiApiKey: process.env.ZHIPUAIL_API_KEY,
   voyageApiKey: process.env.VOYAGE_API_KEY,
+  // Chinese Providers
+  alibabaApiKey: process.env.ALIBABA_API_KEY,
+  baichuanApiKey: process.env.BAICHUAN_API_KEY,
+  baiduApiKey: process.env.BAIDU_API_KEY,
+  bytedanceApiKey: process.env.BYTEDANCE_API_KEY,
+  iflytekApiKey: process.env.IFLYTEK_API_KEY,
+  minimaxApiKey: process.env.MINIMAX_API_KEY,
+  moonshotApiKey: process.env.MOONSHOT_API_KEY,
+  stepfunApiKey: process.env.STEPFUN_API_KEY,
+  tencentApiKey: process.env.TENCENT_API_KEY,
+  yiApiKey: process.env.YI_API_KEY,
+  // International Providers
+  cozeApiKey: process.env.COZE_API_KEY,
+  xaiApiKey: process.env.XAI_API_KEY,
 };
