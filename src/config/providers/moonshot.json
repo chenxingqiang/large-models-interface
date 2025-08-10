@@ -1,0 +1,16 @@
+{
+  "url": "https://api.moonshot.cn/v1/chat/completions",
+  "model": {
+    "default": "moonshot-v1-8k",
+    "large": "moonshot-v1-128k",
+    "small": "moonshot-v1-8k",
+    "agent": "moonshot-v1-32k"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.moonshot.cn/v1/models",
+  "modelsFile": "./data/models/moonshotkimi.json"
+}

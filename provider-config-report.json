@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-08-10T06:07:34.292Z",
+  "timestamp": "2025-08-10T06:26:38.927Z",
   "summary": {
-    "totalProviders": 38,
-    "withModelEndpoints": 25,
+    "totalProviders": 51,
+    "withModelEndpoints": 38,
     "withoutModelEndpoints": 13,
-    "withModelFiles": 25
+    "withModelFiles": 38
   },
   "providers": [
     {
@@ -38,6 +38,16 @@
       "modelFile": null
     },
     {
+      "name": "alibaba",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://dashscope.aliyuncs.com/api/v1/models",
+      "modelFile": "./data/models/alibabaqwen.json"
+    },
+    {
       "name": "anthropic",
       "hasModelEndpoint": true,
       "hasModelFile": true,
@@ -56,6 +66,36 @@
       "hasJsonMode": false,
       "modelEndpoint": "https://api.endpoints.anyscale.com/v1/models",
       "modelFile": "./data/models/anyscale.json"
+    },
+    {
+      "name": "baichuan",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.baichuan-ai.com/v1/models",
+      "modelFile": "./data/models/baichuanai.json"
+    },
+    {
+      "name": "baidu",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/models",
+      "modelFile": "./data/models/baiduernie.json"
+    },
+    {
+      "name": "bytedance",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://ark.cn-beijing.volces.com/api/v3/models",
+      "modelFile": "./data/models/bytedancedoubao.json"
     },
     {
       "name": "cloudflareai",
@@ -86,6 +126,16 @@
       "hasJsonMode": false,
       "modelEndpoint": null,
       "modelFile": null
+    },
+    {
+      "name": "coze",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.coze.com/open_api/v2/models",
+      "modelFile": "./data/models/coze.json"
     },
     {
       "name": "deepinfra",
@@ -188,6 +238,16 @@
       "modelFile": null
     },
     {
+      "name": "iflytek",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://spark-api.xf-yun.com/v1/models",
+      "modelFile": "./data/models/iflytekspark.json"
+    },
+    {
       "name": "lamini",
       "hasModelEndpoint": false,
       "hasModelFile": false,
@@ -208,6 +268,16 @@
       "modelFile": "./data/models/llamacpplocal.json"
     },
     {
+      "name": "minimax",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.minimax.chat/v1/text/chatcompletion_pro/models",
+      "modelFile": "./data/models/minimax.json"
+    },
+    {
       "name": "mistralai",
       "hasModelEndpoint": true,
       "hasModelFile": true,
@@ -226,6 +296,16 @@
       "hasJsonMode": false,
       "modelEndpoint": null,
       "modelFile": null
+    },
+    {
+      "name": "moonshot",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.moonshot.cn/v1/models",
+      "modelFile": "./data/models/moonshotkimi.json"
     },
     {
       "name": "neetsai",
@@ -328,6 +408,36 @@
       "modelFile": null
     },
     {
+      "name": "siliconflow",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.siliconflow.cn/v1/models",
+      "modelFile": "./data/models/siliconflow.json"
+    },
+    {
+      "name": "stepfun",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.stepfun.com/v1/models",
+      "modelFile": "./data/models/stepfun.json"
+    },
+    {
+      "name": "tencent",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://hunyuan.tencentcloudapi.com/models",
+      "modelFile": "./data/models/tencenthunyuan.json"
+    },
+    {
       "name": "thebai",
       "hasModelEndpoint": false,
       "hasModelFile": false,
@@ -376,6 +486,26 @@
       "hasJsonMode": false,
       "modelEndpoint": "https://api.writer.com/v1/models",
       "modelFile": "./data/models/writer.json"
+    },
+    {
+      "name": "xai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.x.ai/v1/models",
+      "modelFile": "./data/models/xaigrok.json"
+    },
+    {
+      "name": "yi",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.lingyiwanwu.com/v1/models",
+      "modelFile": "./data/models/yiai.json"
     },
     {
       "name": "zhipuai",

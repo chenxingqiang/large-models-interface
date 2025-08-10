@@ -1,0 +1,27 @@
+{
+  "url": "https://api.minimax.chat/v1/text/chatcompletion_pro",
+  "model": {
+    "default": "abab6.5s-chat",
+    "large": "abab6.5-chat",
+    "small": "abab6.5s-chat",
+    "agent": "abab6.5-chat"
+  },
+  "embeddingUrl": "https://api.minimax.chat/v1/embeddings",
+  "embeddings": {
+    "expects": {
+      "texts": ["{embedding}"],
+      "type": "query"
+    },
+    "results": "response.data.vectors[0]",
+    "default": "embo-01",
+    "large": "embo-01",
+    "small": "embo-01"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": true,
+  "modelsEndpoint": "https://api.minimax.chat/v1/text/chatcompletion_pro/models",
+  "modelsFile": "./data/models/minimax.json"
+}

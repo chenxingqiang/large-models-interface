@@ -1,0 +1,16 @@
+{
+  "url": "https://hunyuan.tencentcloudapi.com/",
+  "model": {
+    "default": "hunyuan-lite",
+    "large": "hunyuan-pro",
+    "small": "hunyuan-lite",
+    "agent": "hunyuan-standard"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://hunyuan.tencentcloudapi.com/models",
+  "modelsFile": "./data/models/tencenthunyuan.json"
+}

@@ -1,0 +1,16 @@
+{
+  "url": "https://api.lingyiwanwu.com/v1/chat/completions",
+  "model": {
+    "default": "yi-medium",
+    "large": "yi-large",
+    "small": "yi-medium",
+    "agent": "yi-large"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.lingyiwanwu.com/v1/models",
+  "modelsFile": "./data/models/yiai.json"
+}

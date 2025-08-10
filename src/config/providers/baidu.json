@@ -1,0 +1,26 @@
+{
+  "url": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-4.0-turbo-8k",
+  "model": {
+    "default": "ernie-4.0-turbo-8k",
+    "large": "ernie-4.0-8k",
+    "small": "ernie-3.5-8k",
+    "agent": "ernie-4.0-turbo-8k"
+  },
+  "embeddingUrl": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/embedding-v1",
+  "embeddings": {
+    "expects": {
+      "input": "{embedding}"
+    },
+    "results": "response.data.data[0].embedding",
+    "default": "embedding-v1",
+    "large": "embedding-v1",
+    "small": "embedding-v1"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": true,
+  "modelsEndpoint": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/models",
+  "modelsFile": "./data/models/baiduernie.json"
+}

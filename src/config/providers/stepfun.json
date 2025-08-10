@@ -1,0 +1,16 @@
+{
+  "url": "https://api.stepfun.com/v1/chat/completions",
+  "model": {
+    "default": "step-1v-8k",
+    "large": "step-1v-32k",
+    "small": "step-1v-8k",
+    "agent": "step-1v-32k"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.stepfun.com/v1/models",
+  "modelsFile": "./data/models/stepfun.json"
+}

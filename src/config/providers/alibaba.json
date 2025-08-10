@@ -1,0 +1,29 @@
+{
+  "url": "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation",
+  "model": {
+    "default": "qwen-turbo",
+    "large": "qwen-max",
+    "small": "qwen-turbo",
+    "agent": "qwen-plus"
+  },
+  "embeddingUrl": "https://dashscope.aliyuncs.com/api/v1/services/embeddings/text-embedding/text-embedding",
+  "embeddings": {
+    "expects": {
+      "input": {
+        "texts": ["{embedding}"]
+      },
+      "parameters": {}
+    },
+    "results": "response.data.output.embeddings[0].embedding",
+    "default": "text-embedding-v1",
+    "large": "text-embedding-v2",
+    "small": "text-embedding-v1"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": true,
+  "modelsEndpoint": "https://dashscope.aliyuncs.com/api/v1/models",
+  "modelsFile": "./data/models/alibabaqwen.json"
+}

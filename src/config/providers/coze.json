@@ -1,0 +1,16 @@
+{
+  "url": "https://api.coze.com/open_api/v2/chat",
+  "model": {
+    "default": "command-r-plus",
+    "large": "command-r-plus",
+    "small": "command-r",
+    "agent": "command-r-plus"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.coze.com/open_api/v2/models",
+  "modelsFile": "./data/models/coze.json"
+}

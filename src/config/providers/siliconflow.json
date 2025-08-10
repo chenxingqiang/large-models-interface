@@ -1,0 +1,27 @@
+{
+  "url": "https://api.siliconflow.cn/v1/chat/completions",
+  "model": {
+    "default": "Qwen/Qwen2-7B-Instruct",
+    "large": "Qwen/Qwen2-72B-Instruct",
+    "small": "Qwen/Qwen2-1.5B-Instruct",
+    "agent": "Qwen/Qwen2-7B-Instruct"
+  },
+  "embeddingUrl": "https://api.siliconflow.cn/v1/embeddings",
+  "embeddings": {
+    "expects": {
+      "input": "{embedding}",
+      "model": "{model}"
+    },
+    "results": "response.data.data[0].embedding",
+    "default": "BAAI/bge-base-en-v1.5",
+    "large": "BAAI/bge-large-en-v1.5",
+    "small": "BAAI/bge-small-en-v1.5"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": true,
+  "modelsEndpoint": "https://api.siliconflow.cn/v1/models",
+  "modelsFile": "./data/models/siliconflow.json"
+}

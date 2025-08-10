@@ -1,0 +1,16 @@
+{
+  "url": "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
+  "model": {
+    "default": "doubao-lite-4k",
+    "large": "doubao-pro-32k",
+    "small": "doubao-lite-4k",
+    "agent": "doubao-pro-4k"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://ark.cn-beijing.volces.com/api/v3/models",
+  "modelsFile": "./data/models/bytedancedoubao.json"
+}

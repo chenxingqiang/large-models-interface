@@ -1,0 +1,16 @@
+{
+  "url": "https://api.x.ai/v1/chat/completions",
+  "model": {
+    "default": "grok-beta",
+    "large": "grok-beta",
+    "small": "grok-beta",
+    "agent": "grok-beta"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.x.ai/v1/models",
+  "modelsFile": "./data/models/xaigrok.json"
+}
