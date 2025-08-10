@@ -10,5 +10,7 @@
   "stream": true,
   "jsonMode": false,
   "maxTokens": true,
-  "hasEmbeddings": false
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.perplexity.ai/models",
+  "modelsFile": "./data/models/perplexityai.json"
 }

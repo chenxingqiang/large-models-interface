@@ -1,0 +1,508 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T00:00:00Z",
+    "description": "Centralized mapping of AI providers to their model list endpoints",
+    "totalProviders": 38
+  },
+  "providers": {
+    "openai": {
+      "name": "OpenAI",
+      "website": "https://openai.com",
+      "apiDocs": "https://platform.openai.com/docs/api-reference",
+      "modelsEndpoint": "https://api.openai.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings", "vision", "audio", "tts"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "10000/min"
+      }
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "website": "https://anthropic.com",
+      "apiDocs": "https://docs.anthropic.com/claude/reference",
+      "modelsEndpoint": "https://api.anthropic.com/v1/models",
+      "authType": "x-api-key",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "groq": {
+      "name": "Groq",
+      "website": "https://groq.com",
+      "apiDocs": "https://console.groq.com/docs",
+      "modelsEndpoint": "https://api.groq.com/openai/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "30/min"
+      }
+    },
+    "cohere": {
+      "name": "Cohere",
+      "website": "https://cohere.com",
+      "apiDocs": "https://docs.cohere.com/reference",
+      "modelsEndpoint": "https://api.cohere.ai/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "mistralai": {
+      "name": "Mistral AI",
+      "website": "https://mistral.ai",
+      "apiDocs": "https://docs.mistral.ai/api",
+      "modelsEndpoint": "https://api.mistral.ai/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "perplexity": {
+      "name": "Perplexity AI",
+      "website": "https://perplexity.ai",
+      "apiDocs": "https://docs.perplexity.ai",
+      "modelsEndpoint": "https://api.perplexity.ai/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "20/min"
+      }
+    },
+    "togetherai": {
+      "name": "Together AI",
+      "website": "https://together.ai",
+      "apiDocs": "https://docs.together.ai/reference",
+      "modelsEndpoint": "https://api.together.xyz/models/info",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "600/min"
+      }
+    },
+    "deepseek": {
+      "name": "DeepSeek",
+      "website": "https://deepseek.com",
+      "apiDocs": "https://platform.deepseek.com/api-docs",
+      "modelsEndpoint": "https://api.deepseek.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "fireworksai": {
+      "name": "Fireworks AI",
+      "website": "https://fireworks.ai",
+      "apiDocs": "https://readme.fireworks.ai/docs",
+      "modelsEndpoint": "https://api.fireworks.ai/inference/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "600/min"
+      }
+    },
+    "rekaai": {
+      "name": "Reka AI",
+      "website": "https://reka.ai",
+      "apiDocs": "https://docs.reka.ai",
+      "modelsEndpoint": "https://api.reka.ai/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "huggingface": {
+      "name": "Hugging Face",
+      "website": "https://huggingface.co",
+      "apiDocs": "https://huggingface.co/docs/api-inference",
+      "modelsEndpoint": "https://api-inference.huggingface.co/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/hour"
+      }
+    },
+    "replicate": {
+      "name": "Replicate",
+      "website": "https://replicate.com",
+      "apiDocs": "https://replicate.com/docs/reference/http",
+      "modelsEndpoint": "https://api.replicate.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision", "image_generation"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "voyage": {
+      "name": "Voyage AI",
+      "website": "https://voyage.ai",
+      "apiDocs": "https://docs.voyageai.com",
+      "modelsEndpoint": "https://api.voyageai.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "300/min"
+      }
+    },
+    "novitaai": {
+      "name": "Novita AI",
+      "website": "https://novita.ai",
+      "apiDocs": "https://novita.ai/docs",
+      "modelsEndpoint": "https://api.novita.ai/v3/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "image_generation"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "200/min"
+      }
+    },
+    "nvidia": {
+      "name": "NVIDIA AI",
+      "website": "https://nvidia.com/ai",
+      "apiDocs": "https://docs.nvidia.com/nim",
+      "modelsEndpoint": "https://integrate.api.nvidia.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "octoai": {
+      "name": "OctoAI",
+      "website": "https://octo.ai",
+      "apiDocs": "https://octo.ai/docs/getting-started/inference-models",
+      "modelsEndpoint": "https://text.octoai.run/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "deepinfra": {
+      "name": "DeepInfra",
+      "website": "https://deepinfra.com",
+      "apiDocs": "https://deepinfra.com/docs",
+      "modelsEndpoint": "https://api.deepinfra.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "300/min"
+      }
+    },
+    "anyscale": {
+      "name": "Anyscale",
+      "website": "https://anyscale.com",
+      "apiDocs": "https://docs.anyscale.com/endpoints",
+      "modelsEndpoint": "https://api.endpoints.anyscale.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "500/min"
+      }
+    },
+    "ai21": {
+      "name": "AI21 Studio",
+      "website": "https://ai21.com",
+      "apiDocs": "https://docs.ai21.com/reference",
+      "modelsEndpoint": "https://api.ai21.com/studio/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "300/min"
+      }
+    },
+    "zhipuai": {
+      "name": "智谱AI (Zhipu AI)",
+      "website": "https://zhipuai.cn",
+      "apiDocs": "https://open.bigmodel.cn/dev/api",
+      "modelsEndpoint": "https://open.bigmodel.cn/api/paas/v4/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "200/min"
+      }
+    },
+    "moonshot": {
+      "name": "月之暗面 (Moonshot AI)",
+      "website": "https://moonshot.cn",
+      "apiDocs": "https://platform.moonshot.cn/docs",
+      "modelsEndpoint": "https://api.moonshot.cn/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "minimax": {
+      "name": "MiniMax",
+      "website": "https://minimax.chat",
+      "apiDocs": "https://api.minimax.chat/document",
+      "modelsEndpoint": "https://api.minimax.chat/v1/text/chatcompletion_pro/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "200/min"
+      }
+    },
+    "baidu": {
+      "name": "百度智能云 (Baidu AI)",
+      "website": "https://cloud.baidu.com",
+      "apiDocs": "https://cloud.baidu.com/doc/WENXINWORKSHOP",
+      "modelsEndpoint": "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/models",
+      "authType": "access_token",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "300/min"
+      }
+    },
+    "alibaba": {
+      "name": "阿里云 (Alibaba Cloud AI)",
+      "website": "https://dashscope.aliyun.com",
+      "apiDocs": "https://help.aliyun.com/zh/dashscope",
+      "modelsEndpoint": "https://dashscope.aliyuncs.com/api/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision", "audio", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "500/min"
+      }
+    },
+    "bytedance": {
+      "name": "字节跳动 (ByteDance Doubao)",
+      "website": "https://volcengine.com",
+      "apiDocs": "https://volcengine.com/docs",
+      "modelsEndpoint": "https://ark.cn-beijing.volces.com/api/v3/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "200/min"
+      }
+    },
+    "tencent": {
+      "name": "腾讯云 (Tencent Hunyuan)",
+      "website": "https://cloud.tencent.com",
+      "apiDocs": "https://cloud.tencent.com/document/product/1729",
+      "modelsEndpoint": "https://hunyuan.tencentcloudapi.com/models",
+      "authType": "signature",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "100/min"
+      }
+    },
+    "iflytek": {
+      "name": "科大讯飞 (iFLYTEK Spark)",
+      "website": "https://xinghuo.xfyun.cn",
+      "apiDocs": "https://www.xfyun.cn/doc/spark/Web-API.html",
+      "modelsEndpoint": "https://spark-api.xf-yun.com/v1/models",
+      "authType": "app_id",
+      "status": "active",
+      "supportedFeatures": ["chat", "audio"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "100/min"
+      }
+    },
+    "baichuan": {
+      "name": "百川智能 (Baichuan AI)",
+      "website": "https://baichuan-ai.com",
+      "apiDocs": "https://platform.baichuan-ai.com/docs",
+      "modelsEndpoint": "https://api.baichuan-ai.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "stepfun": {
+      "name": "阶跃星辰 (StepFun)",
+      "website": "https://stepfun.com",
+      "apiDocs": "https://platform.stepfun.com/docs",
+      "modelsEndpoint": "https://api.stepfun.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "yi": {
+      "name": "零一万物 (01.AI)",
+      "website": "https://01.ai",
+      "apiDocs": "https://platform.lingyiwanwu.com/docs",
+      "modelsEndpoint": "https://api.lingyiwanwu.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "200/min"
+      }
+    },
+    "xai": {
+      "name": "xAI (Grok)",
+      "website": "https://x.ai",
+      "apiDocs": "https://docs.x.ai",
+      "modelsEndpoint": "https://api.x.ai/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "100/min"
+      }
+    },
+    "cloudflareai": {
+      "name": "Cloudflare Workers AI",
+      "website": "https://cloudflare.com",
+      "apiDocs": "https://developers.cloudflare.com/workers-ai",
+      "modelsEndpoint": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/models/search",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings", "image_generation"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "google": {
+      "name": "Google AI (Gemini)",
+      "website": "https://ai.google",
+      "apiDocs": "https://ai.google.dev/docs",
+      "modelsEndpoint": "https://generativelanguage.googleapis.com/v1/models",
+      "authType": "api_key",
+      "status": "active",
+      "supportedFeatures": ["chat", "vision", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "60/min"
+      }
+    },
+    "watsonxai": {
+      "name": "IBM Watson AI",
+      "website": "https://ibm.com/watson",
+      "apiDocs": "https://cloud.ibm.com/docs/watsonxai",
+      "modelsEndpoint": "https://us-south.ml.cloud.ibm.com/ml/v1/foundation_model_specs",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "500/min"
+      }
+    },
+    "writer": {
+      "name": "Writer",
+      "website": "https://writer.com",
+      "apiDocs": "https://dev.writer.com",
+      "modelsEndpoint": "https://api.writer.com/v1/models",
+      "authType": "bearer",
+      "status": "active",
+      "supportedFeatures": ["chat"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "1000/min"
+      }
+    },
+    "ollama": {
+      "name": "Ollama (Local)",
+      "website": "https://ollama.ai",
+      "apiDocs": "https://github.com/ollama/ollama/blob/main/docs/api.md",
+      "modelsEndpoint": "http://localhost:11434/api/tags",
+      "authType": "none",
+      "status": "local",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "unlimited"
+      }
+    },
+    "llamacpp": {
+      "name": "LLaMA.cpp (Local)",
+      "website": "https://github.com/ggerganov/llama.cpp",
+      "apiDocs": "https://github.com/ggerganov/llama.cpp/blob/master/examples/server/README.md",
+      "modelsEndpoint": "http://localhost:8080/v1/models",
+      "authType": "none",
+      "status": "local",
+      "supportedFeatures": ["chat", "embeddings"],
+      "rateLimits": {
+        "models": "unlimited",
+        "requests": "unlimited"
+      }
+    }
+  },
+  "categories": {
+    "global": ["openai", "anthropic", "google", "cohere", "mistralai"],
+    "chinese": ["zhipuai", "moonshot", "minimax", "baidu", "alibaba", "bytedance", "tencent", "iflytek", "baichuan", "stepfun", "yi"],
+    "opensource": ["huggingface", "replicate", "togetherai", "ollama", "llamacpp"],
+    "specialized": ["voyage", "nvidia", "cloudflareai", "watsonxai"],
+    "emerging": ["groq", "fireworksai", "rekaai", "xai", "deepseek"],
+    "enterprise": ["microsoft", "aws", "oracle", "salesforce"],
+    "local": ["ollama", "llamacpp"]
+  },
+  "features": {
+    "chat": ["openai", "anthropic", "groq", "cohere", "mistralai", "zhipuai", "moonshot", "baidu", "alibaba"],
+    "vision": ["openai", "anthropic", "google", "zhipuai", "rekaai", "alibaba", "stepfun", "yi"],
+    "audio": ["openai", "alibaba", "iflytek"],
+    "embeddings": ["openai", "cohere", "mistralai", "voyage", "huggingface", "nvidia", "deepinfra"],
+    "image_generation": ["openai", "replicate", "novitaai", "cloudflareai"],
+    "code": ["openai", "anthropic", "deepseek", "groq", "stepfun"]
+  }
+}

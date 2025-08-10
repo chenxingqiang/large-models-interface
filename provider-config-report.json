@@ -1,0 +1,391 @@
+{
+  "timestamp": "2025-08-10T06:07:34.292Z",
+  "summary": {
+    "totalProviders": 38,
+    "withModelEndpoints": 25,
+    "withoutModelEndpoints": 13,
+    "withModelFiles": 25
+  },
+  "providers": [
+    {
+      "name": "ai21",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.ai21.com/studio/v1/models",
+      "modelFile": "./data/models/ai21studio.json"
+    },
+    {
+      "name": "ailayer",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "aimlapi",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "anthropic",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.anthropic.com/v1/models",
+      "modelFile": "./data/models/anthropic.json"
+    },
+    {
+      "name": "anyscale",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.endpoints.anyscale.com/v1/models",
+      "modelFile": "./data/models/anyscale.json"
+    },
+    {
+      "name": "cloudflareai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/models/search",
+      "modelFile": "./data/models/cloudflareworkersai.json"
+    },
+    {
+      "name": "cohere",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.cohere.ai/v1/models",
+      "modelFile": "./data/models/cohere.json"
+    },
+    {
+      "name": "corcel",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "deepinfra",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "https://api.deepinfra.com/v1/models",
+      "modelFile": "./data/models/deepinfra.json"
+    },
+    {
+      "name": "deepseek",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.deepseek.com/v1/models",
+      "modelFile": "./data/models/deepseek.json"
+    },
+    {
+      "name": "fireworksai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "https://api.fireworks.ai/inference/v1/models",
+      "modelFile": "./data/models/fireworksai.json"
+    },
+    {
+      "name": "forefront",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "friendliai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "gemini",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "gooseai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "groq",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.groq.com/openai/v1/models",
+      "modelFile": "./data/models/groq.json"
+    },
+    {
+      "name": "huggingface",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api-inference.huggingface.co/models",
+      "modelFile": "./data/models/huggingface.json"
+    },
+    {
+      "name": "hyperbeeai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "lamini",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "llamacpp",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "http://localhost:8080/v1/models",
+      "modelFile": "./data/models/llamacpplocal.json"
+    },
+    {
+      "name": "mistralai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "https://api.mistral.ai/v1/models",
+      "modelFile": "./data/models/mistralai.json"
+    },
+    {
+      "name": "monsterapi",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "neetsai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "novitaai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.novita.ai/v3/models",
+      "modelFile": "./data/models/novitaai.json"
+    },
+    {
+      "name": "nvidia",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://integrate.api.nvidia.com/v1/models",
+      "modelFile": "./data/models/nvidiaai.json"
+    },
+    {
+      "name": "octoai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://text.octoai.run/v1/models",
+      "modelFile": "./data/models/octoai.json"
+    },
+    {
+      "name": "ollama",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "http://localhost:11434/api/tags",
+      "modelFile": "./data/models/ollamalocal.json"
+    },
+    {
+      "name": "openai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "https://api.openai.com/v1/models",
+      "modelFile": "./data/models/openai.json"
+    },
+    {
+      "name": "perplexity",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.perplexity.ai/models",
+      "modelFile": "./data/models/perplexityai.json"
+    },
+    {
+      "name": "rekaai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.reka.ai/v1/models",
+      "modelFile": "./data/models/rekaai.json"
+    },
+    {
+      "name": "replicate",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.replicate.com/v1/models",
+      "modelFile": "./data/models/replicate.json"
+    },
+    {
+      "name": "shuttleai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "thebai",
+      "hasModelEndpoint": false,
+      "hasModelFile": false,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": null,
+      "modelFile": null
+    },
+    {
+      "name": "togetherai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": true,
+      "hasJsonMode": true,
+      "modelEndpoint": "https://api.together.xyz/models/info",
+      "modelFile": "./data/models/togetherai.json"
+    },
+    {
+      "name": "voyage",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.voyageai.com/v1/models",
+      "modelFile": "./data/models/voyageai.json"
+    },
+    {
+      "name": "watsonxai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": true,
+      "hasStreaming": false,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://us-south.ml.cloud.ibm.com/ml/v1/foundation_model_specs",
+      "modelFile": "./data/models/ibmwatsonai.json"
+    },
+    {
+      "name": "writer",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://api.writer.com/v1/models",
+      "modelFile": "./data/models/writer.json"
+    },
+    {
+      "name": "zhipuai",
+      "hasModelEndpoint": true,
+      "hasModelFile": true,
+      "hasEmbeddings": false,
+      "hasStreaming": true,
+      "hasJsonMode": false,
+      "modelEndpoint": "https://open.bigmodel.cn/api/paas/v4/models",
+      "modelFile": "./data/models/aizhipuai.json"
+    }
+  ]
+}

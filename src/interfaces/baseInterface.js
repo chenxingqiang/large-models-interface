@@ -8,6 +8,8 @@
  * @param {object} headers - Additional headers for the API requests.
  */
 const axios = require('axios');
+const fs = require('fs').promises;
+const path = require('path');
 
 const {
   getModelByAlias,
@@ -52,6 +54,19 @@ class BaseInterface {
       //signal: controller.signal,
     });
     this.config = config;
+
+    // 🆕 Initialize model discovery state
+    this.initializationState = {
+      status: 'initializing', // initializing, completed, failed, cached
+      startTime: Date.now(),
+      progress: 0,
+      message: 'Initializing model discovery...',
+      modelsCount: 0,
+      error: null
+    };
+
+    // 🚀 Start model discovery asynchronously (non-blocking)
+    this.initializeModels();
   }
 
   /**
@@ -520,6 +535,281 @@ class BaseInterface {
 
   recoverError(error) {
     return null;
+  }
+
+  // 🆕 Model Discovery Methods
+
+  /**
+   * Get current initialization state
+   * @returns {object} Current initialization state
+   */
+  getInitializationState() {
+    return { ...this.initializationState };
+  }
+
+  /**
+   * Wait for initialization to complete
+   * @param {number} timeout - Timeout in milliseconds
+   * @returns {Promise<object>} Final initialization state
+   */
+  async waitForInitialization(timeout = 10000) {
+    const startTime = Date.now();
+    
+    while (this.initializationState.status === 'initializing') {
+      if (Date.now() - startTime > timeout) {
+        throw new Error(`Initialization timeout: ${timeout}ms`);
+      }
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+    
+    return this.initializationState;
+  }
+
+  /**
+   * Initialize models asynchronously
+   */
+  async initializeModels() {
+    try {
+      this.updateInitializationState({
+        status: 'initializing',
+        progress: 10,
+        message: `🔍 Checking ${this.interfaceName} model endpoint...`
+      });
+
+      if (!this.config[this.interfaceName]?.modelsEndpoint) {
+        this.updateInitializationState({
+          status: 'completed',
+          progress: 100,
+          message: `📌 ${this.interfaceName} has no model endpoint configured, using static config`,
+          modelsCount: Object.keys(this.config[this.interfaceName]?.model || {}).length
+        });
+        return;
+      }
+
+      this.updateInitializationState({
+        progress: 30,
+        message: `🌐 Connecting to ${this.interfaceName} API...`
+      });
+
+      await this.updateModelsFile();
+      
+      const models = await this.getAvailableModels();
+      this.updateInitializationState({
+        status: 'completed',
+        progress: 100,
+        message: `✅ ${this.interfaceName} model discovery completed`,
+        modelsCount: models.length
+      });
+
+      console.log(`🎉 ${this.interfaceName}: Discovered ${models.length} models (${Date.now() - this.initializationState.startTime}ms)`);
+      
+    } catch (error) {
+      console.warn(`⚠️ ${this.interfaceName} model update failed, trying cache:`, error.message);
+      
+      try {
+        const cachedModels = await this.getAvailableModels();
+        this.updateInitializationState({
+          status: 'cached',
+          progress: 100,
+          message: `📁 ${this.interfaceName} using cached models`,
+          modelsCount: cachedModels.length,
+          error: error.message
+        });
+        
+        console.log(`📁 ${this.interfaceName}: Using ${cachedModels.length} cached models`);
+        
+      } catch (cacheError) {
+        this.updateInitializationState({
+          status: 'failed',
+          progress: 100,
+          message: `❌ ${this.interfaceName} initialization failed, using static config`,
+          modelsCount: Object.keys(this.config[this.interfaceName]?.model || {}).length,
+          error: `API failed: ${error.message}, Cache failed: ${cacheError.message}`
+        });
+        
+        console.warn(`❌ ${this.interfaceName}: Falling back to static config`);
+      }
+    }
+  }
+
+  /**
+   * Update initialization state and log progress
+   * @param {object} updates - State updates
+   */
+  updateInitializationState(updates) {
+    this.initializationState = {
+      ...this.initializationState,
+      ...updates,
+      lastUpdated: Date.now()
+    };
+    
+    // Real-time status output
+    if (updates.message) {
+      console.log(`[${new Date().toLocaleTimeString()}] ${updates.message}`);
+    }
+  }
+
+  /**
+   * Update models file with latest models from API
+   */
+  async updateModelsFile() {
+    if (!this.config[this.interfaceName]?.modelsEndpoint) {
+      console.log(`📌 ${this.interfaceName} model endpoint not configured, skipping update`);
+      return;
+    }
+
+    try {
+      this.updateInitializationState({
+        progress: 40,
+        message: `📡 Fetching latest ${this.interfaceName} model list...`
+      });
+
+      // Get models from API
+      const response = await this.client.get(this.config[this.interfaceName].modelsEndpoint);
+      
+      this.updateInitializationState({
+        progress: 60,
+        message: `🔄 Parsing ${this.interfaceName} model response...`
+      });
+      
+      const models = this.parseModelsResponse(response.data);
+      
+      this.updateInitializationState({
+        progress: 80,
+        message: `💾 Saving ${models.length} models to local cache...`
+      });
+      
+      // Enrich model data with capabilities
+      const modelDetails = await this.enrichModelData(models);
+      
+      // Save to models file
+      await this.saveModelsFile(modelDetails);
+      
+      this.updateInitializationState({
+        progress: 90,
+        message: `🔍 Saved ${models.length} ${this.interfaceName} models`
+      });
+      
+      console.log(`🔄 ${this.interfaceName} discovered ${models.length} models`);
+    } catch (error) {
+      console.warn(`❌ ${this.interfaceName} model update failed:`, error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Parse models response from API (can be overridden by subclasses)
+   * @param {object} data - API response data
+   * @returns {Array} Array of model objects
+   */
+  parseModelsResponse(data) {
+    // Default implementation for OpenAI-compatible format
+    if (data.data && Array.isArray(data.data)) {
+      return data.data.map(model => ({
+        id: model.id,
+        name: model.id,
+        object: model.object,
+        created: model.created,
+        owned_by: model.owned_by
+      }));
+    }
+    return [];
+  }
+
+  /**
+   * Enrich model data with additional information
+   * @param {Array} models - Basic model information
+   * @returns {Array} Enhanced model information
+   */
+  async enrichModelData(models) {
+    return models.map(model => ({
+      ...model,
+      provider: this.interfaceName,
+      capabilities: this.detectModelCapabilities(model),
+      lastUpdated: new Date().toISOString()
+    }));
+  }
+
+  /**
+   * Detect model capabilities based on model name and type
+   * @param {object} model - Model information
+   * @returns {object} Model capabilities
+   */
+  detectModelCapabilities(model) {
+    const capabilities = {
+      chat: true,
+      streaming: this.config[this.interfaceName]?.stream || false,
+      embeddings: false,
+      vision: false,
+      audio: false,
+      jsonMode: this.config[this.interfaceName]?.jsonMode || false
+    };
+
+    // Infer capabilities based on model name
+    const name = (model.name || '').toLowerCase();
+    if (name.includes('vision') || name.includes('4v') || name.includes('4o')) {
+      capabilities.vision = true;
+    }
+    if (name.includes('embedding') || name.includes('embed')) {
+      capabilities.embeddings = true;
+      capabilities.chat = false;
+    } else if (name.includes('whisper') || name.includes('tts')) {
+      capabilities.audio = true;
+      capabilities.chat = false;
+    }
+
+    return capabilities;
+  }
+
+  /**
+   * Save models to local state file
+   * @param {Array} models - Enhanced model data
+   */
+  async saveModelsFile(models) {
+    const modelsFile = this.config[this.interfaceName]?.modelsFile || `./data/models/${this.interfaceName}.json`;
+    
+    // Ensure directory exists
+    await fs.mkdir(path.dirname(modelsFile), { recursive: true });
+    
+    const modelsData = {
+      provider: this.interfaceName,
+      lastUpdated: new Date().toISOString(),
+      totalModels: models.length,
+      models: models,
+      aliases: this.config[this.interfaceName]?.model || {},
+      embeddingAliases: this.config[this.interfaceName]?.embeddings || {}
+    };
+    
+    await fs.writeFile(modelsFile, JSON.stringify(modelsData, null, 2));
+  }
+
+  /**
+   * Get all available models from cache or config
+   * @returns {Array} Available models
+   */
+  async getAvailableModels() {
+    try {
+      const modelsFile = this.config[this.interfaceName]?.modelsFile || `./data/models/${this.interfaceName}.json`;
+      const data = await fs.readFile(modelsFile, 'utf8');
+      const modelsData = JSON.parse(data);
+      return modelsData.models || [];
+    } catch (error) {
+      // Fall back to config file static models
+      console.warn(`📁 ${this.interfaceName} failed to read models file, using config file`);
+      return Object.values(this.config[this.interfaceName]?.model || {}).map(name => ({ 
+        id: name, 
+        name, 
+        provider: this.interfaceName,
+        capabilities: {
+          chat: true,
+          streaming: this.config[this.interfaceName]?.stream || false,
+          embeddings: false,
+          vision: false,
+          audio: false,
+          jsonMode: this.config[this.interfaceName]?.jsonMode || false
+        }
+      }));
+    }
   }
 }
 

@@ -1,1 +1,15 @@
-{"url":"https://api.writer.com/v1/chat","model":{"default":"palmyra-x-002-32k","large":"palmyra-x-002-32k","small":"palmyra-x-002-32k"},"createMessageObject":"getMessageObject","stream":true,"jsonMode":false,"maxTokens":true,"hasEmbeddings":false}
+{
+  "url": "https://api.writer.com/v1/chat",
+  "model": {
+    "default": "palmyra-x-002-32k",
+    "large": "palmyra-x-002-32k",
+    "small": "palmyra-x-002-32k"
+  },
+  "createMessageObject": "getMessageObject",
+  "stream": true,
+  "jsonMode": false,
+  "maxTokens": true,
+  "hasEmbeddings": false,
+  "modelsEndpoint": "https://api.writer.com/v1/models",
+  "modelsFile": "./data/models/writer.json"
+}
