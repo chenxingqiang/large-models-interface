@@ -46,12 +46,27 @@ describe('LLMInterface.getAllModelNames', () => {
       'rekaai',
       'replicate',
       'shuttleai',
+      'siliconflow',
+      'stepfun',
+      'tencent',
       'thebai',
       'togetherai',
       'voyage',
       'watsonxai',
       'writer',
+      'xai',
+      'yi',
       'zhipuai',
+      // Chinese Providers
+      'alibaba',
+      'baichuan',
+      'baidu',
+      'bytedance',
+      'iflytek',
+      'minimax',
+      'moonshot',
+      // International Providers
+      'coze',
     ];
 
     // Sort both arrays to ensure the order doesn't affect the comparison
@@ -72,7 +87,7 @@ describe('LLMInterface.getInterfaceConfigValue', () => {
     {
       llmProvider: 'openai',
       key: 'model.default',
-      expectedValue: 'gpt-3.5-turbo',
+      expectedValue: 'gpt-4o-mini',
     },
     {
       llmProvider: 'ai21',

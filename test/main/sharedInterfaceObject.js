@@ -45,8 +45,19 @@ let interfaces = {
   writer: config.writerApiKey,
   voyage: config.voyageApiKey,
   zhipuai: config.zhipuaiApiKey,
-};
-interfaces = {
-  ai21: config.ai21ApiKey,
+  // Chinese Providers
+  alibaba: config.alibabaApiKey,
+  baichuan: config.baichuanApiKey,
+  baidu: config.baiduApiKey,
+  bytedance: config.bytedanceApiKey,
+  iflytek: config.iflytekApiKey,
+  minimax: config.minimaxApiKey,
+  moonshot: config.moonshotApiKey,
+  stepfun: config.stepfunApiKey,
+  tencent: config.tencentApiKey,
+  yi: config.yiApiKey,
+  // International Providers
+  coze: config.cozeApiKey,
+  xai: config.xaiApiKey,
 };
 module.exports = interfaces;
